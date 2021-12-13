@@ -47,7 +47,7 @@ class VendingMachine
       @profit_money += @juice_price
       @slot_money -= @juice_price
     else
-      p "b"
+      
     end
   end
 
