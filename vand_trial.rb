@@ -13,14 +13,12 @@ class VendingMachine
     # 最初の自動販売機に入っている金額は0円
     @slot_money = 0
     @profit_money = 0
-    
     @colas = { name: "cola", price: 120, stock: 5}
     @juice_variation = {
       cola: { name: "cola", price: 120, stock: 5 },
       redbull: { name: "redbull", price: 200, stock: 5 },
       water: { name: "water", price: 100, stock: 5 },
     }
-
   end
 
   #ステップ２ 2番目格納されているジュースの情報を取得
@@ -60,14 +58,12 @@ class VendingMachine
   #ステップ４の２ 投入金額と在庫から購入可能なドリンクのリストを出力する
   def display_possible_buy_juices
     @juice_variation.each_value do |juice|
-        if juice[:price] <= @slot_money && juice[:stock] != 0
-          p juice
-        #   p "#{juice[:name]}が買えます。#{juice[:price]}円で残りは#{juice[:stock]}本です。"
-        else
-          p "b"
-            
-        end
-        
+      if juice[:price] <= @slot_money && juice[:stock] != 0
+        p juice
+      #   p "#{juice[:name]}が買えます。#{juice[:price]}円で残りは#{juice[:stock]}本です。"
+      else
+
+      end
     end
   end
 
@@ -95,15 +91,12 @@ class VendingMachine
     @slot_money = 0
   end
 
-
   #メソッドに使われるメソッドたち（部品）
   #飲み物の名前を引数に入れたら、それの値段と在庫を出力するメソッド
   def shortcut_juice_statement(simbol_juice_name)
     info_the_juice = @juice_variation[simbol_juice_name] 
     @juice_price = info_the_juice[:price]
     @stock = info_the_juice[:stock]
-    p info_the_juice
-    
   end  
 end
 
