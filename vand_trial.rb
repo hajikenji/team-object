@@ -39,10 +39,6 @@ class VendingMachine
     end
   end
 
-#   def fff
-#     p @juice_variation[:cola][:stock] -= 1
-#   end
-  
   #ステップ３の２、３番目 実行され購入が起きると、在庫を減らし売上を保存
   def buy_juice(simbol_juice_name)
     shortcut_juice_statement(simbol_juice_name)
